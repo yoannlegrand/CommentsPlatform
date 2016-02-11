@@ -1,0 +1,25 @@
+{# src/ComentsBundle/Resources/views/Default/index.html.twig #}
+
+{% extends "ComentsBundle::layout.html.twig" %}
+
+{% block title %}
+  Accueil - {{ parent() }}
+{% endblock %}
+
+{% block coments_body %}
+
+<header class="page-header">
+  <h2>recherche utilisateur </h2>
+</header>
+   
+  <form method="post" class="col-lg-6">
+
+  <input type="text" name="patern" class="form-control"> 
+  
+  <br/>
+  
+  <input type="submit" value="valider" class="btn btn-default">
+  </from>  
+
+
+{% endblock %}

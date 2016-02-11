@@ -1,0 +1,4 @@
+services:
+    git_hub:
+        class: ComentsBundle\Services\GitHub
+        arguments: ['@buzz']

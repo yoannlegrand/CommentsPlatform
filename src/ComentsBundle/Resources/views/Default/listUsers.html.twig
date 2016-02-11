@@ -1,0 +1,21 @@
+{# src/ComentsBundle/Resources/views/Default/listUsers.html.twig #}
+
+{% extends "ComentsBundle::layout.html.twig" %}
+
+{% block title %}
+  Accueil - {{ parent() }}
+{% endblock %}
+
+{% block coments_body %}
+<header class="page-header">
+  <h2>resultats </h2>
+</header> 
+<div class="col-sm-10"> 
+  <ul class="list-group">
+    {% for user in users %} 
+	<li class="list-group-item"> <a href="{{ path('coments_user', { 'username': user.login }) }}">{{user.login}}</a> </li> 
+    {% endfor %}
+  </ul> 
+</div>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{# src/ComentsBundle/Resources/views/Default/user.html.twig #}
+
+{% extends "ComentsBundle::layout.html.twig" %}
+
+{% block title %}
+  Accueil - {{ parent() }}
+{% endblock %}
+
+{% block coments_body %}
+
+
+<header class="page-header">
+	<h2>Commenter une repo de {{username}} </h2>
+</header> 
+
+<form method="post" class="col-lg-6">
+  
+  <label for="texte">Liste des repos :</label>
+  <SELECT name="repo" class="form-control">
+  {% for repo in repos %} 
+	<OPTION>{{repo.full_name}}</OPTION>
+  {% endfor %}
+  </SELECT>  
+  <br/>
+  <label for="texte">Commentaire :</label>
+  <textarea name="comment" class="form-control"> </textarea>
+  <br/>
+  <input type="submit" value="valider" class="btn btn-default">
+  </from>  
+  
+<header class="page-header">
+  <h2>Derniers Commentaire pour {{username}} </h2>
+ </header>  
+<div class="col-sm-20"> 
+	<div class="list-group">
+  
+    {% for comment in listComments %} 
+	<div class="list-group-item" > 
+	<h4 class="list-group-item-heading"> {{comment.repo}} </h4> 
+	<p class="list-group-item-text"> {{comment.comment}} </p> 
+	</div>
+	<br/>
+    {% endfor %}
+
+	<div class="list-group"> 
+ </div>
+
+
+{% endblock %}

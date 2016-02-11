@@ -1,0 +1,22 @@
+{# src/UserBundle/Resources/views/Security/login.html.twig #}
+
+{% extends "::layout.html.twig" %}
+
+{% block body %}
+
+  {% if error %}
+    <div class="alert alert-danger">{{ error.message }}</div>
+  {% endif %}
+
+  {# Le formulaire, avec URL de soumission vers la route « login_check » comme on l'a vu #}
+  <form action="{{ path('login_check') }}" method="post" class="col-lg-3">
+    <label for="username">Login :</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control"/>
+
+    <label for="password">Mot de passe :</label>
+    <input type="password" id="password" name="_password" class="form-control"/>
+    <br />
+    <input type="submit" value="Connexion" class="btn btn-default" />
+  </form>
+
+{% endblock %}

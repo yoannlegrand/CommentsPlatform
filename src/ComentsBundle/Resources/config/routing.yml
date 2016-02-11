@@ -1,0 +1,6 @@
+coments_homepage:
+    path:     /
+    defaults: { _controller: ComentsBundle:Default:index }
+coments_user:
+    path:    /{username}/comment
+    defaults: { _controller: ComentsBundle:Default:user }
