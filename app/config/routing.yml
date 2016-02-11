@@ -1,0 +1,12 @@
+yle_platform:
+    resource: "@ComentsBundle/Resources/config/routing.yml"
+    prefix:   /
+login:
+    path:   /login
+    defaults:  { _controller: UserBundle:Security:login }
+
+login_check:
+    path:   /login_check
+
+logout:
+    path:   /logout
